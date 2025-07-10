@@ -1,6 +1,6 @@
 # formula-app
 Has:
-> Menu
-> Math equations
-> Physics equations
-> Quit
+- Menu
+- Math equations
+- Physics equations
+- Quit

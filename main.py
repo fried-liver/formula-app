@@ -1,7 +1,7 @@
 def main_screen():
  """
  1. Math
- 2. Pysics
+ 2. Physics
  3. Quit
 """
 def physics_equation():
@@ -22,7 +22,7 @@ def math_equation():
 
 print("Archimedes  1.0.\n Welcome to MIST’s greatest equations solver ever! ☆*: .｡. o(≧▽≦)o .｡.:*☆\n")
 main_menu = input("Please choose one of the options  (^^)\n ")
-main_menu_2 = input("Pleae enter a number:   ")
+main_menu_2 = input("Please enter a number:   ")
 while main_menu != 3:
     print(main_menu)
     print(main_screen)
@@ -36,5 +36,10 @@ while main_menu != 3:
                 [print(main_menu_2)]  
     else:
         break
+    if main_menu_2 == 1:
+       match main_menu_2:
+          case 1:
+             [print(Quadratic_equation())]
+             
         
 
