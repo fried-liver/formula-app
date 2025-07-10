@@ -1,45 +1,56 @@
 def main_screen():
- """
+ main_screen = """
  1. Math
  2. Physics
  3. Quit
 """
-def physics_equation():
- """
+def physics_option():
+ physics_option = """
 1. Wave 
 2. Half Life
 3. Final Velocity
 """
-def math_equation():
- """
+def math_option():
+ math_option = """
  1. Quadratic equation
  2. Sine rule
  3. Cosine rule
 """
+def Quadratic_equation():
+   Quadratic_equation = """
 
-"""for i in len(math_menu):
-    print(i + "." m " " + ath)_menu[i]"""
+"""
+def Sine_Rule_equation():
+   Sine_Rule_equation = """
+
+"""
+def Cosine_Rule_equation():
+   Cosine_Rule_equation = """
+
+"""
 
 print("Archimedes  1.0.\n Welcome to MIST’s greatest equations solver ever! ☆*: .｡. o(≧▽≦)o .｡.:*☆\n")
-main_menu = input("Please choose one of the options  (^^)\n ")
-main_menu_2 = input("Please enter a number:   ")
-while main_menu != 3:
-    print(main_menu)
+resp = input("Please choose one of the options  (^^)\n ")
+resp2 = input("Please enter a number:   ")
+while True:
     print(main_screen)
-    if main_menu == 1:
-        match main_menu:
-            case 1:
-                [print(math_equation())]
-                [print(main_menu_2)]
-            case 2:
-                [print(physics_equation())]
-                [print(main_menu_2)]  
-    else:
+    print(resp)
+    if resp == 1:
+        print(math_option())
+        print(resp2)
+    elif resp == 2:
+        print(physics_option())
+        print(resp2)
+    elif resp ==3:
         break
-    if main_menu_2 == 1:
-       match main_menu_2:
-          case 1:
-             [print(Quadratic_equation())]
+    else:
+            print("Not a valid number")
+    if resp2 == 1:
+       print(Quadratic_equation())
+    elif resp2 == 2:
+       print(Sine_Rule_equation())
+    elif resp2 == 3:
+       print(Cosine_Rule_equation())
              
         
 
