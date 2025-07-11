@@ -23,14 +23,13 @@ class Quadratic(Equation):
         a=(-self.b*self.x-self.c)/self.x**2
         return a
     def solve_b(self):
-        b=(-self.a*self.x^2-self.c)/self.x
+        b=(-self.a*self.x**2-self.c)/self.x
         return b
     def solve_c(self):
         c=-self.a*self.x**2-self.b*self.x
         return c
     def explanation(self):
         if not self.x:
-            
             self.var_dict.pop("x")
             self.explain("x", self.var_dict, "x = (-b ± sqrt(b^2 - 4ac)) / 2a", self.solve_x) 
         elif not self.a:

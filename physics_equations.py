@@ -1,5 +1,7 @@
 import math
-class final_velo:
+from equation import Equation
+
+class final_velo(Equation):
     def __init__(self, V=None, u=None, a=None, s=None):
         super().__init__()
         self.V = V
@@ -20,6 +22,10 @@ class final_velo:
         a = (self.V**2 - self.u**2)/(2*self.s)
         return round(a, 1)
     
+    def solve_s(self):
+        s = (self.V**2 - self.u**2)/(2*self.a)
+        return round(s, 1)
+    
     def explanataion(self):
         if not self.V:
             self.var_dict.pop("V")
@@ -32,7 +38,7 @@ class final_velo:
             self.explain("a", self.var_dict, "V² = u² + 2as", self.solve_a, "a = (V² - u²)/2s")
         elif not self.s:
             self.var_dict.pop("s")
-            self.explain("s", self.var_dict, "V² = u² + 2as", self.solve_a, "s = (V² - u²)/2a")
+            self.explain("s", self.var_dict, "V² = u² + 2as", self.solve_s, "s = (V² - u²)/2a")
         
 class wave_equation:
     def __init__(self, speed=None, wavelength=None, frequency=None):
