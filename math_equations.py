@@ -53,7 +53,7 @@ class sine(Equation):
         self.B = B
         self.a = a
         self.b = b
-        self.var_dict={"A":self.A, "B":self.b, "a":self.a, "b":self.b}
+        self.var_dict={"A":self.A, "B":self.B, "a":self.a, "b":self.b}
     def solve_A(self):
         A = math.asin((math.sin(math.radians(self.B))*self.a)/self.b)
         return round(math.degrees(A), 1)
@@ -62,6 +62,15 @@ class sine(Equation):
         a = (self.b * math.sin(math.radians(self.A))/math.sin(math.radians(self.B)))
         return round(a, 1)
     def explanation(self):
-        pass
-solve = sine(A=26.6, B=43, a=None, b=3.5)
-print(solve.solve_a())
+        if not self.A:
+            self.var_dict.pop("A")
+            self.explain("A", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_A, "A = sin⁻¹((sin(B)*a)/b)")
+        if not self.B:
+            self.var_dict.pop("B")
+            self.explain("B", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_A, "B = sin⁻¹((sin(A)*a)/a)")
+        if not self.a:
+            self.var_dict.pop("a")
+            self.explain("a", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "a = (sin(A)*b)/sin(B)")
+        if not self.b:
+            self.var_dict.pop("b")
+            self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "b = (sin(B)*a)/sin(A)")
