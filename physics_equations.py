@@ -19,3 +19,7 @@ class wave_equation:
 solve = wave_equation(speed=2.5, wavelength=10, frequency=None)
 print(solve.solve_frequency())
   
+
+
+if __name__=="__main__":
+    pass

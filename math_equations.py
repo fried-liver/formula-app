@@ -63,5 +63,8 @@ class sine(Equation):
         return round(a, 1)
     def explanation(self):
         pass
-solve = sine(A=26.6, B=43, a=None, b=3.5)
-print(solve.solve_a())
+if __name__=="__main__":
+    
+    solve = sine(A=26.6, B=43, a=None, b=3.5)
+    print(solve.solve_a())
+    

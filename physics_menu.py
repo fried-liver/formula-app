@@ -18,3 +18,7 @@ def physics_menu():
         except ValueError:
             print("Invalid input. Please enter a number.")
     
+
+
+if __name__=="__main__":
+    pass
