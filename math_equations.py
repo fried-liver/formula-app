@@ -72,54 +72,46 @@ class sine(Equation):
             self.explain("a", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "a = (sin(A)*b)/sin(B)")
         if not self.b:
             self.var_dict.pop("b")
-            self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a(), "b = (sin(B)*a)/sin(A)")
+            
             self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "b = (sin(B)*a)/sin(A)")
 
 
 
-class Cos_Rule:
+class Cos_Rule(Equation):
     def __init__(self, x=None, a=None, b=None, c=None):
+        super().__init__()
         self.x=x
         self.a=a
         self.b=b
         self.c=c
+        self.var_dict={"x":self.x, "a":self.a, "b":self.b, "c":self.c}
+    def solve_x(self):
+        cos_A = (self.b**2 + self.c**2 - self.a**2) / (2 * self.b * self.c)
+        return cos_A
+    def solve_a(self):
+        a=math.sqrt(self.b**2+self.c**2-2*self.b*self.c*math.cos(self.x))
+        return a      
+    def solve_b(self):
 
-    def solve_abc(self):
-        cos=math.cos(self.x)    
-        if cos>=0:
-            self.a_sqr=self.b**2+self.c**2-2*self.b*self.c*cos
-            self.b_sqr=self.a**2+self.c**2-2*self.a*self.c*cos
-            self.c_sqr=self.b**2+self.a**2-2*self.a*self.b*cos
-            ans_type==None
-        else:
-            pass
+        b=self.a*math.cos(self.x)+math.sqrt(self.c**2-self.a**2*math.cos(self.x)**2)
+        return b
+    def solve_c(self):
+        c=self.a*math.cos(self.x)+math.sqrt(self.b**2-self.a**2*math.cos(self.x)**2)
+        return c
+    
+            
+    def cos_explanation(self):
+        if not self.x:
+            self.var_dict.pop("x")
+            self.explain("x", self.var_dict, "a^2 = b^2 + c^2 - 2bc cos(X)", self.solve_x, "cos(X) = (b^2 + c^2 - a^2) / 2bc")
+        elif not self.a:
+            self.var_dict.pop("a")
+            self.explain("a", self.var_dict, "a^2 = b^2 + c^2 - 2bc cos(X)", self.solve_x, "a = sqrt(b^2 + c^2 - 2bc cos(X))")
+        elif not self.b:
+            self.var_dict.pop("b")
+            self.explain("b", self.var_dict, "a^2 = b^2 + c^2 - 2bc cos(X)", self.solve_x, "b = a cos(C) ± √(c² - a² + a² cos²(x))")
+        elif not self.c:
+            self.var_dict.pop("c")
+            self.explain("c", self.var_dict, "a^2 = b^2 + c^2 - 2bc cos(X)", self.solve_x, "c = a cos(x) ± √(b² - a² + a² cos²(x))")
         
-        if self.a_sqr != None:
-            ans_type="A squared"
-            return self.a_sqr
-        elif self.b_sqr != None:
-            ans_type="B squared"
-            return self.b_sqr
-        elif self.c_sqr != None:
-            ans_type="C squared"
-            return self.c_sqr
-        else:
-            print("ERROR 404 ANSWER NOT FOUND")
-            
-    def cos_explanation(self, ans_type):
-        if ans_type == "A squared":
-            print("To solve for a, enter the values into the equation: ")
-            print(f"a^2 = b^2 + c^2 - 2bc cos(X)")
-            print(f"First, solve for a in the equation.")
-            print(f"{self.a_sqr}=")
-            print(f"")
-
-        elif ans_type == "B squared":
-            print("To solve for a, enter the values into the equation: ")
-            print(f"a2 = b2 + c2 - 2bc cos(X)")
-            print(f"First, solve for a in the equation.")
-            
-            print(f"")
-
-        elif ans_type == "C squared":
-            pass
+        
