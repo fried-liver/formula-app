@@ -26,3 +26,5 @@ class Equation:
             print(self.replace(subject_equation, var_dict))
         print(f"The answer is {solve_func()}")
 
+if __name__=="__main__":
+    pass

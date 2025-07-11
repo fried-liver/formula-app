@@ -29,3 +29,6 @@ def get_float():
             print("Input must be float. Please re enter.")
 
 
+
+if __name__=="__main__":
+    pass

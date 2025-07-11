@@ -72,4 +72,54 @@ class sine(Equation):
             self.explain("a", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "a = (sin(A)*b)/sin(B)")
         if not self.b:
             self.var_dict.pop("b")
+            self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a(), "b = (sin(B)*a)/sin(A)")
             self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "b = (sin(B)*a)/sin(A)")
+
+
+
+class Cos_Rule:
+    def __init__(self, x=None, a=None, b=None, c=None):
+        self.x=x
+        self.a=a
+        self.b=b
+        self.c=c
+
+    def solve_abc(self):
+        cos=math.cos(self.x)    
+        if cos>=0:
+            self.a_sqr=self.b**2+self.c**2-2*self.b*self.c*cos
+            self.b_sqr=self.a**2+self.c**2-2*self.a*self.c*cos
+            self.c_sqr=self.b**2+self.a**2-2*self.a*self.b*cos
+            ans_type==None
+        else:
+            pass
+        
+        if self.a_sqr != None:
+            ans_type="A squared"
+            return self.a_sqr
+        elif self.b_sqr != None:
+            ans_type="B squared"
+            return self.b_sqr
+        elif self.c_sqr != None:
+            ans_type="C squared"
+            return self.c_sqr
+        else:
+            print("ERROR 404 ANSWER NOT FOUND")
+            
+    def cos_explanation(self, ans_type):
+        if ans_type == "A squared":
+            print("To solve for a, enter the values into the equation: ")
+            print(f"a^2 = b^2 + c^2 - 2bc cos(X)")
+            print(f"First, solve for a in the equation.")
+            print(f"{self.a_sqr}=")
+            print(f"")
+
+        elif ans_type == "B squared":
+            print("To solve for a, enter the values into the equation: ")
+            print(f"a2 = b2 + c2 - 2bc cos(X)")
+            print(f"First, solve for a in the equation.")
+            
+            print(f"")
+
+        elif ans_type == "C squared":
+            pass
