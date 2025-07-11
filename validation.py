@@ -28,6 +28,4 @@ def get_float():
         else:
             print("Input must be float. Please re enter.")
 
-get_float()
-
 
