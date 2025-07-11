@@ -36,9 +36,11 @@ class final_velo:
         
 class wave_equation:
     def __init__(self, speed=None, wavelength=None, frequency=None):
+        super().__init__()
         self.speed = speed
         self.wavelength = wavelength
         self.frequency = frequency
+        self.var_dict = {"V": self.speed, "f": self.frequency, "𝜆": self.wavelength}
 
     def solve_speed(self):
         speed = self.wavelength * self.frequency
@@ -52,6 +54,15 @@ class wave_equation:
         frequency = self.speed/self.wavelength
         return frequency
     
-solve = wave_equation(speed=2.5, wavelength=10, frequency=None)
-print(solve.solve_frequency())
+    def explanation(self):
+        if not self.speed:
+            self.var_dict.pop("V")
+            self.explain("V", self.var_dict, "V = f𝜆", self.solve_speed)
+        elif not self.wavelength:
+            self.var_dict.pop("𝜆")
+            self.explain("𝜆", self.var_dict, "V = f𝜆", self.solve_wavelength, "𝜆 = V/f")
+        elif not self.frequency:
+            self.var_dict.pop("f")
+            self.explain("f", self.var_dict, "V = f𝜆", self.solve_frequency, "f = V/𝜆")
+        
   
