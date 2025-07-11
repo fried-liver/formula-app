@@ -1,3 +1,4 @@
+from physics_equations import *
 def physics_menu():
     physics_menu = [
         "Wave Equation",

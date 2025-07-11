@@ -1,7 +1,6 @@
 import math
 from equation import Equation
 
-
 class Quadratic(Equation):
     def __init__(self, x=None, a=None, b=None, c=None):
         super().__init__()
