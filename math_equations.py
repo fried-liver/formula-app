@@ -64,13 +64,13 @@ class sine(Equation):
     def explanation(self):
         if not self.A:
             self.var_dict.pop("A")
-            self.explain("A", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_A(), "A = sin⁻¹((sin(B)*a)/b)")
+            self.explain("A", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_A, "A = sin⁻¹((sin(B)*a)/b)")
         if not self.B:
             self.var_dict.pop("B")
-            self.explain("B", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_A(), "B = sin⁻¹((sin(A)*a)/a)")
+            self.explain("B", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_A, "B = sin⁻¹((sin(A)*a)/a)")
         if not self.a:
             self.var_dict.pop("a")
-            self.explain("a", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a(), "a = (sin(A)*b)/sin(B)")
+            self.explain("a", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "a = (sin(A)*b)/sin(B)")
         if not self.b:
             self.var_dict.pop("b")
-            self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a(), "b = (sin(B)*a)/sin(A)")
+            self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "b = (sin(B)*a)/sin(A)")
