@@ -12,7 +12,6 @@ def main():
     while True:
         print(menu_)
         resp = int(get_int())
-        
         print(resp)
         if resp == 1:
             
