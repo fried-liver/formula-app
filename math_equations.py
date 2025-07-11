@@ -45,3 +45,21 @@ class Quadratic(Equation):
             self.var_dict.pop("c")
             self.explain("c", self.var_dict, "ax^2 + bx + c = 0", self.solve_a, "c = -ax^2 - bx") 
 
+
+class sine:
+    def __init__(self, A=None, B=None, a=None, b=None):
+        self.A = A
+        self.B = B
+        self.a = a
+        self.b = b
+    
+    def solve_A(self):
+        A = math.asin((math.sin(math.radians(self.B))*self.a)/self.b)
+        return round(math.degrees(A), 1)
+    
+    def solve_a(self):
+        a = (self.b * math.sin(math.radians(self.A))/math.sin(math.radians(self.B)))
+        return round(a, 1)
+
+solve = sine(A=26.6, B=43, a=None, b=3.5)
+print(solve.solve_a())
