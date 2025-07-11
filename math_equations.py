@@ -122,3 +122,4 @@ class Cos_Rule:
             print(f"")
 
         elif ans_type == "C squared":
+            
