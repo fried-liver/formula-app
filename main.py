@@ -25,16 +25,16 @@ def main():
 """
    if choice == 1:
        print(Quadratic_equation())
-    elif choice == 2:
+   elif choice == 2:
        print(Sine_Rule_equation())
-    elif choice == 3:
+   elif choice == 3:
        print(Cosine_Rule_equation())
 
     if choice == 1:
         print(Wave_equation())
-        elif choice == 2:
+    elif choice == 2:
         print(Half_Life_equation())
-        elif choice == 3:
+    elif choice == 3:
         print(Final_Velocity_equation())
 """
 main()
