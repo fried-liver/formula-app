@@ -1,11 +1,15 @@
 import math
-class Quadratic:
+from equation import Equation
+
+
+class Quadratic(Equation):
     def __init__(self, x=None, a=None, b=None, c=None):
+        super().__init__()
         self.x=x
         self.a=a
         self.b=b
         self.c=c
-
+        self.var_dict={"x":self.x, "a":self.a, "b":self.b, "c":self.c}
     def solve_x(self):
         disc=self.b**2-4*self.a*self.c
         if disc>=0:
@@ -27,22 +31,21 @@ class Quadratic:
         return c
     def explanation(self):
         if not self.x:
-            print("To solve for x, enter the values in the quadratic formula: ")
-            print(f"(-b ± sqrt(b^2 - 4ac)) / 2a")
-            print(f"(-{self.b} ± sqrt({self.b}^2 - 4*{self.a}*{self.c})) / 2*{self.a}")
-            print(self.solve_x())
+            
+            self.var_dict.pop("x")
+            self.explain("x", self.var_dict, "x = (-b ± sqrt(b^2 - 4ac)) / 2a", self.solve_x) 
         elif not self.a:
-            print("To solve for a, enter the values into the equation: ")
-            print("ax^2 + bx + c = 0")
-            print(f"a*{self.x}^2 + {self.b}*{self.x} + {self.c} = 0")
-            print(f"make a the subject")
-            print("a = (-c-bx) / x^2")
-            print(f"")
+        
+            self.var_dict.pop("a")
+            self.explain("a", self.var_dict, "ax^2 + bx + c = 0", self.solve_a, "a = (-c-bx) / x^2") 
+        elif not self.b:
+            self.var_dict.pop("b")
+            self.explain("b", self.var_dict, "ax^2 + bx + c = 0", self.solve_a, "b = (-c - ax^2) / x") 
+        elif not self.c:
+            self.var_dict.pop("c")
+            self.explain("c", self.var_dict, "ax^2 + bx + c = 0", self.solve_a, "c = -ax^2 - bx") 
 
-q=Quadratic(x=None, a=2, b=2, c=0)
-print(q.solve_x())
 
-import math
 class sine:
     def __init__(self, A=None, B=None, a=None, b=None):
         self.A = A
