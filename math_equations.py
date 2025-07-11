@@ -41,3 +41,22 @@ class Quadratic:
 
 q=Quadratic(x=None, a=2, b=2, c=0)
 print(q.solve_x())
+
+import math
+class sine:
+    def __init__(self, A=None, B=None, a=None, b=None):
+        self.A = A
+        self.B = B
+        self.a = a
+        self.b = b
+    
+    def solve_A(self):
+        A = math.asin((math.sin(math.radians(self.B))*self.a)/self.b)
+        return round(math.degrees(A), 1)
+    
+    def solve_a(self):
+        a = (self.b * math.sin(math.radians(self.A))/math.sin(math.radians(self.B)))
+        return round(a, 1)
+
+solve = sine(A=26.6, B=43, a=None, b=3.5)
+print(solve.solve_a())
