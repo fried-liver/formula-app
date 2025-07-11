@@ -1,4 +1,4 @@
-import math_equations
+from math_equations import *
 def math_menu():
     math_menu = [
         "Quadratic equation",
