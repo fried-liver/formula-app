@@ -31,9 +31,7 @@ def main():
         3. Quit
         """
     while True:
-        print("Archimedes  1.0.\n Welcome to MIST's greatest equations solver ever! ☆*: .｡. o(≧▽≦)o .｡.:*☆\n")
         print(menu_)
-        print = "Input Option: "
         resp = int(get_int())
         
         print(resp)
