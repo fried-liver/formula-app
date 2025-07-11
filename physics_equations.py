@@ -66,3 +66,7 @@ class wave_equation:
             self.explain("f", self.var_dict, "V = f𝜆", self.solve_frequency, "f = V/𝜆")
         
   
+
+
+if __name__=="__main__":
+    pass

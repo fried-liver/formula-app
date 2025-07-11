@@ -21,3 +21,5 @@ def math_menu():
         except ValueError:
             print("Invalid input, please enter a number.")
 
+if __name__=="__main__":
+    pass

@@ -73,6 +73,7 @@ class sine(Equation):
             self.explain("a", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "a = (sin(A)*b)/sin(B)")
         if not self.b:
             self.var_dict.pop("b")
+            self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a(), "b = (sin(B)*a)/sin(A)")
             self.explain("b", self.var_dict, "sin(A)/a = sin(B)/b = sin(C)/c", self.solve_a, "b = (sin(B)*a)/sin(A)")
 
 
@@ -118,8 +119,8 @@ class Cos_Rule:
             print("To solve for a, enter the values into the equation: ")
             print(f"a2 = b2 + c2 - 2bc cos(X)")
             print(f"First, solve for a in the equation.")
-            print(f"{}=")
+            
             print(f"")
 
         elif ans_type == "C squared":
-            
+            pass
